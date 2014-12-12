@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+  function delayTime() {
+    return document.getElementById('delay').value;
+  }
+
+  function changeValue(text) {
+    document.getElementById('test-subject').innerHTML = text;
+  }
+
+  function helloWorld() {
+    changeValue('Hello, world!');
+  }
+
+  function changeAfterDelay() {
+    setTimeout(helloWorld, delayTime());
+  }
+</script>
+
+<span id="test-subject">-----</span>
+<br><br>
+<label for="delay">Delay</label>
+<input id="delay" name="delay" value="1000"><br>
+<a href="#" onclick="changeAfterDelay()">Change</a><br>
+<a href="#" onclick="changeValue('-----')">Reset</a><br>
+
+</body>
+</html>
