@@ -3,6 +3,7 @@
 <body>
 
 <script>
+  var timeout1;
   function changeValue(text) {
     document.getElementById('test-subject').innerHTML = text;
   }
@@ -21,7 +22,8 @@
     } else {
       helloWorld()
     }
-    setTimeout(clearHello, 2000);
+    if (timeout1) { clearTimeout(timeout1); }
+    timeout1 = setTimeout(clearHello, 2000);
   }
 </script>
 
