@@ -1,4 +1,4 @@
-require 'capybara'
+require 'capybara/dsl'
 
 describe 'Capybara' do
   include Capybara::DSL
@@ -6,7 +6,7 @@ describe 'Capybara' do
   before do
     Capybara.configure do |config|
       config.run_server = false
-      config.default_driver = :selenium
+      config.default_driver = :selenium_chrome
       config.app_host = 'localhost:8080'
     end
 
