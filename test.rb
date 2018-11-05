@@ -15,6 +15,6 @@ describe 'Example' do
 
   it 'says hello when you click the link' do
     click_link 'Say Hello'
-    expect(find('#test-subject').text).to eq 'Hello, world!'
+    expect(find('#output-box').text).to eq 'Hello, world!'
   end
 end

@@ -5,7 +5,7 @@
 <script>
   var timeout1;
   function changeValue(text) {
-    document.getElementById('test-subject').innerHTML = text;
+    document.getElementById('output-box').innerHTML = text;
   }
 
   function helloWorld() {
@@ -23,19 +23,24 @@
       helloWorld()
     }
     if (timeout1) { clearTimeout(timeout1); }
-    timeout1 = setTimeout(clearHello, 2000);
+    timeout1 = setTimeout(clearHello, 1500);
   }
 </script>
 
+<style>
+#output-box {
+  background: #DEF;
+  border: 1px solid #BCD;
+  display: inline-block;
+  padding: 30px;
+  margin: 100px;
+  width: 200px;
+}
+</style>
 <center>
-<br><br>
-<br><br>
-<br><br>
-<span id="test-subject">-----</span>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+<div>
+<span id="output-box">-----</span>
+</div>
 <a href="#" onclick="changeAfterDelay()">Say Hello</a><br>
 <a href="#" onclick="changeValue('-----')">Reset</a><br>
 </center>
