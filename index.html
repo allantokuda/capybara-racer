@@ -3,10 +3,6 @@
 <body>
 
 <script>
-  function delayTime() {
-    return document.getElementById('delay').value;
-  }
-
   function changeValue(text) {
     document.getElementById('test-subject').innerHTML = text;
   }
@@ -15,17 +11,32 @@
     changeValue('Hello, world!');
   }
 
+  function clearHello() {
+    changeValue('-----');
+  }
+
   function changeAfterDelay() {
-    setTimeout(helloWorld, delayTime());
+    if (Math.random() > 0.5) {
+      setTimeout(helloWorld, 100);
+    } else {
+      helloWorld()
+    }
+    setTimeout(clearHello, 2000);
   }
 </script>
 
+<center>
+<br><br>
+<br><br>
+<br><br>
 <span id="test-subject">-----</span>
 <br><br>
-<label for="delay">Delay</label>
-<input id="delay" name="delay" value="1000"><br>
-<a href="#" onclick="changeAfterDelay()">Change</a><br>
+<br><br>
+<br><br>
+<br><br>
+<a href="#" onclick="changeAfterDelay()">Say Hello</a><br>
 <a href="#" onclick="changeValue('-----')">Reset</a><br>
+</center>
 
 </body>
 </html>
